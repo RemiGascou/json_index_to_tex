@@ -1,0 +1,24 @@
+{
+    "terms" : [
+        {
+            "ref"   : "term_isp",
+            "name"  : "Internet service provider",
+            "descr" : ""
+        },
+        {
+            "ref" : "term_isp3",
+            "name": "",
+            "descr" : ""
+        },
+        {
+            "ref" : "term_zzz",
+            "name": "Zeeee",
+            "descr" : "In the end"
+        },
+        {
+            "ref" : "term_abc",
+            "name": "ABC",
+            "descr" : "alphabet"
+        }        
+    ]
+}
