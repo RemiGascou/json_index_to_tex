@@ -7,15 +7,17 @@ class JtTParser(object):
     def __init__(self, pathtofilename=""):
         super(JtTParser, self).__init__()
         self.pathtofilename = pathtofilename
-        self.data = {}
+        self.data = []
 
     def sortData(self, order="ASC"):
         if order in ["ASC", "DESC"]:
-            lines = self.data["terms"]
-            lines.sort(key=lambda k: k.get('name', 'term_blank'), reverse=(order=="DESC"))
-            print(lines)
+            self.data.sort(key=lambda k: k.get('name', 'term_blank'), reverse=(order=="DESC"))
         else :
             raise TypeError("Order value must be \"ASC\" or \"DESC\". Got order="+order)
+
+    def printData(self):
+        for element in self.data:
+            print(element)
 
     def load(self, pathtofilename=""):
         if pathtofilename == "":
@@ -26,10 +28,19 @@ class JtTParser(object):
         f = open(pathtofilename, 'r')
         jsondata = ''.join(f.readlines())
         f.close()
-        self.data = json.loads(jsondata)
+        data = json.loads(jsondata)
+        self.data = data["terms"]
 
     def exportToTex(self, texfilename="index.tex"):
         if texfilename != "":
-            pass
+            datatex = """"""
+            for element in self.data:
+                datatex += "\\textbf{" + element['name'] + "}\n"
+                datatex += "\\label{" + element['ref'] + "}\n"
+                datatex += element['descr']
+                datatex += "\n\n"
+            f = open(texfilename, 'w')
+            f.write(datatex)
+            f.close()
         else :
             raise FileNotFoundError("No texfilename given.")
