@@ -1,0 +1,34 @@
+{
+    "terms" : [
+        {
+            "ref"   : "term_isp",
+            "name"  : "Internet service provider",
+            "descr" : "An Internet service provider (ISP) is an organization that provides services for accessing, using, or participating in the Internet. Internet service providers may be organized in various forms, such as commercial, community-owned, non-profit, or otherwise privately owned."
+        },
+        {
+            "ref"   : "term_wisp",
+            "name"  : "WISP",
+            "descr" : "A wireless Internet service provider (WISP) is an Internet service provider with a network based on wireless networking. Technology may include commonplace Wi-Fi wireless mesh networking, or proprietary equipment designed to operate over open 900 MHz, 2.4 GHz, 4.9, 5, 24, and 60 GHz bands or licensed frequencies in the UHF band (including the MMDS frequency band), LMDS, and other bands from 6Ghz to 80Ghz."
+        },
+        {
+            "ref"   : "term_vlan",
+            "name"  : "VLAN",
+            "descr" : "A virtual LAN (VLAN) is any broadcast domain that is partitioned and isolated in a computer network at the data link layer (OSI layer 2). LAN is the abbreviation for local area network and in this context virtual refers to a physical object recreated and altered by additional logic. VLANs work by applying tags to network packets and handling these tags in networking systems – creating the appearance and functionality of network traffic that is physically on a single network but acts as if it is split between separate networks. In this way, VLANs can keep network applications separate despite being connected to the same physical network, and without requiring multiple sets of cabling and networking devices to be deployed."
+        },
+        {
+            "ref"   : "term_lan",
+            "name"  : "LAN",
+            "descr" : "A local area network (LAN) is a computer network that interconnects computers within a limited area such as a residence, school, laboratory, university campus or office building.[1] By contrast, a wide area network (WAN) not only covers a larger geographic distance, but also generally involves leased telecommunication circuits."
+        },
+        {
+            "ref"   : "term_man",
+            "name"  : "MAN",
+            "descr" : "A metropolitan area network (MAN) is a computer network that interconnects users with computer resources in a geographic area or region larger than that covered by even a large local area network (LAN) but smaller than the area covered by a wide area network (WAN). The term MAN is applied to the interconnection of networks in a city into a single larger network which may then also offer efficient connection to a wide area network. The term is also used to describe the interconnection of several local area networks in a metropolitan area through the use of point-to-point connections between them. It has a range of 5 to 50 kilometers. "
+        },
+        {
+            "ref"   : "term_wlan",
+            "name"  : "WLAN",
+            "descr" : "A wireless LAN (WLAN) is a wireless computer network that links two or more devices using wireless communication to form a local area network (LAN) within a limited area such as a home, school, computer laboratory, campus, office building etc."
+        }
+    ]
+}
