@@ -3,21 +3,22 @@
 import json
 import sys
 
-class JtTParser(object):
-    """docstring for JtTParser."""
+class JSON2Tex(object):
+    """docstring for JSON2Tex."""
     def __init__(self, pathtofilename=""):
-        super(JtTParser, self).__init__()
+        super(JSON2Tex, self).__init__()
         self.pathtofilename = pathtofilename
-        self.data           = []
+        self.data   = {}
+        self.terms  = []
 
     def sortData(self, order="ASC"):
         if order in ["ASC", "DESC"]:
-            self.data.sort(key=lambda k: k.get('name', 'term_blank'), reverse=(order=="DESC"))
+            self.terms.sort(key=lambda k: k.get('name', 'term_blank'), reverse=(order=="DESC"))
         else :
             raise TypeError("Order value must be \"ASC\" or \"DESC\". Got order="+order)
 
     def printData(self):
-        for element in self.data:
+        for element in self.terms:
             print(element)
 
     def load(self, pathtofilename=""):
@@ -29,15 +30,15 @@ class JtTParser(object):
         f = open(pathtofilename, 'r')
         jsondata = ''.join(f.readlines())
         f.close()
-        data = json.loads(jsondata)
-        self.data = data["terms"]
+        self.data   = json.loads(jsondata)
+        self.terms  = self.data["terms"]
 
     def exportToTex(self, texfilename="index.tex"):
         if texfilename != "":
             if not texfilename.endswith(".tex"):
                 texfilename += ".tex"
             datatex = """"""
-            for element in self.data:
+            for element in self.terms:
                 datatex += "\\textbf{" + element['name'] + "}\n"
                 datatex += "\\label{" + element['ref'] + "}\n"
                 datatex += element['descr']
@@ -48,9 +49,19 @@ class JtTParser(object):
         else :
             raise FileNotFoundError("No texfilename given.")
 
+    def exportToJSON(self, jsonfilename="index.json"):
+        if jsonfilename != "":
+            if not jsonfilename.endswith(".json"):
+                jsonfilename += ".json"
+            f = open(jsonfilename, 'w')
+            f.write(json.dumps(self.data, indent=4))
+            f.close()
+        else :
+            raise FileNotFoundError("No jsonfilename given.")
+
 
 usage = """\n"""
-usage += "  Usage : python3 jttparser.py infile.json outfile.tex\n"
+usage += "  Usage : python3 JSON2Tex.py infile.json outfile.tex\n"
 
 
 if __name__ == '__main__':
@@ -58,9 +69,10 @@ if __name__ == '__main__':
     if len(args) == 3:
         jsoninfile = args[1]
         texoutfile = args[2]
-        a = JtTParser()
+        a = JSON2Tex()
         a.load(jsoninfile)
         a.sortData()
+        a.exportToJSON(jsoninfile)
         a.exportToTex(texoutfile)
     else :
         print(usage)
