@@ -39,8 +39,8 @@ class JSON2Tex(object):
                 texfilename += ".tex"
             datatex = """"""
             for element in self.terms:
-                datatex += "\\textbf{" + element['name'] + "}\n"
-                datatex += "\\label{" + element['ref'] + "}\n"
+                datatex += "\\subsectionnn{" + element['name'] + "}\n"
+                datatex += "\\label{" + element['ref'] + "}\n\n"
                 datatex += element['descr']
                 datatex += "\n\n"
             f = open(texfilename, 'w')
