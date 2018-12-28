@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-NewApp -> nouveaufichierWindow
+NewApp -> newFileWindow
 
 Author: John Doe
 Last edited: December 2018
@@ -15,10 +15,10 @@ from PyQt5.QtCore import *
 from lib.ui import *
 from lib.core import *
 
-class nouveaufichierWindow(QWidget):
+class newFileWindow(QWidget):
 	def __init__(self, parent=None):
-		super(nouveaufichierWindow, self).__init__()
-		self.title = 'nouveaufichierWindow'
+		super(newFileWindow, self).__init__()
+		self.title = 'newFileWindow'
 		self.marginleft = 0
 		self.margintop  = 0
 		self.width      = 300
@@ -40,5 +40,5 @@ class nouveaufichierWindow(QWidget):
 
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
-	ex = nouveaufichierWindow()
+	ex = newFileWindow()
 	sys.exit(app.exec_())

@@ -7,7 +7,7 @@ def get_version():
 	return get_version_name() + " " + get_version_tag()
 
 def get_version_tag():
-	return "v.0.0.1"
+	return "v.1.1.1"
 
 def get_version_name():
 	return "Alpha"

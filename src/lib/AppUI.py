@@ -24,11 +24,11 @@ class AppUI(QMainWindow):
 		self.margin_top   = 200
 		self.width        = 800
 		self.height       = 600
+		self.j2t 		  = JSON2Tex()
 		self._initUI()
 
 	def _initUI(self):
 		self.setWindowTitle(self.title)
-		#self.setWindowIcon(QIcon('lib/meta/ico.png'))
 		self.setGeometry(self.margin_left, self.margin_top, self.width, self.height)
 		self.setFixedSize(self.size())
 		self.setAttribute(Qt.WA_DeleteOnClose)
@@ -37,29 +37,59 @@ class AppUI(QMainWindow):
 
 	def _initMenus(self):
 		mainMenu = self.menuBar()
-		menuFichier  = mainMenu.addMenu('Fichier')
-		nouveaufichierButton = QAction('Nouveau fichier', self)
-		nouveaufichierButton.triggered.connect(self.start_nouveaufichierWindow)
-		menuFichier.addAction(nouveaufichierButton)
-		ouvrirunfichierButton = QAction('Ouvrir un Fichier', self)
-		ouvrirunfichierButton.triggered.connect(self.start_ouvrirunfichierWindow)
-		menuFichier.addAction(ouvrirunfichierButton)
-		menuFichier.addSeparator()
+		menuFile  = mainMenu.addMenu('File')
+		newFileButton = QAction('New File', self)
+		newFileButton.triggered.connect(self.start_newFileWindow)
+		menuFile.addAction(newFileButton)
+		openFileButton = QAction('Open File', self)
+		openFileButton.triggered.connect(self.start_openFileWindow)
+		menuFile.addAction(openFileButton)
+		menuFile.addSeparator()
+		exportToJsonButton = QAction('Export To JSON', self)
+		exportToJsonButton.triggered.connect(self.action_exportToJSON)
+		menuFile.addAction(exportToJsonButton)
+		exportToTexButton = QAction('Export To Tex', self)
+		exportToTexButton.triggered.connect(self.action_exportToTex)
+		menuFile.addAction(exportToTexButton)
+		menuFile.addSeparator()
 		exitButton = QAction('Exit', self)
 		exitButton.setShortcut('Ctrl+Q')
 		exitButton.setStatusTip('Exit application')
 		exitButton.triggered.connect(self.close)
-		menuFichier.addAction(exitButton)
+		menuFile.addAction(exitButton)
+
+		menuEdit  = mainMenu.addMenu('Edit')
+		sortASC_Button = QAction('Sort data ASC', self)
+		sortASC_Button.triggered.connect(self.action_sortdataASC)
+		menuEdit.addAction(sortASC_Button)
+		sortDESC_Button = QAction('Sort data DESC', self)
+		sortDESC_Button.triggered.connect(self.action_sortdataDESC)
+		menuEdit.addAction(sortDESC_Button)
 
 # *------------------------------Windows Handlers----------------------------- *
 
-	def start_nouveaufichierWindow(self):
-		self.wnouveaufichierWindow = nouveaufichierWindow()
-		self.wnouveaufichierWindow.show()
+	def start_newFileWindow(self):
+		self.wnewFileWindow = newFileWindow()
+		self.wnewFileWindow.show()
 
-	def start_ouvrirunfichierWindow(self):
-		self.wouvrirunfichierWindow = ouvrirunfichierWindow()
-		self.wouvrirunfichierWindow.show()
+	def start_openFileWindow(self):
+		self.wopenFileWindow = openFileWindow()
+		self.wopenFileWindow.show()
+
+# *------------------------------Actions Handlers----------------------------- *
+
+	def action_sortdataASC(self):
+		self.j2t.sortData("ASC")
+
+	def action_sortdataDESC(self):
+		self.j2t.sortData("DESC")
+
+	def action_exportToTex(self):
+		pass
+
+	def action_exportToJSON(self):
+		pass
+
 
 
 

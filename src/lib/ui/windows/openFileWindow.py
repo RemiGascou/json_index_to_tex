@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-NewApp -> ouvrirunfichierWindow
+NewApp -> openFileWindow
 
 Author: John Doe
 Last edited: December 2018
@@ -15,10 +15,10 @@ from PyQt5.QtCore import *
 from lib.ui import *
 from lib.core import *
 
-class ouvrirunfichierWindow(QWidget):
+class openFileWindow(QWidget):
 	def __init__(self, parent=None):
-		super(ouvrirunfichierWindow, self).__init__()
-		self.title = 'ouvrirunfichierWindow'
+		super(openFileWindow, self).__init__()
+		self.title = 'openFileWindow'
 		self.marginleft = 0
 		self.margintop  = 0
 		self.width      = 300
@@ -40,5 +40,5 @@ class ouvrirunfichierWindow(QWidget):
 
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
-	ex = ouvrirunfichierWindow()
+	ex = openFileWindow()
 	sys.exit(app.exec_())
