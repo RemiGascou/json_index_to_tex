@@ -1,6 +1,31 @@
 {
     "terms": [
         {
+            "ref": "term_arp",
+            "name": "Address Resolution Protocol",
+            "descr": "The process that is used to find a Layer 2 address when a Layer 3 address is known."
+        },
+        {
+            "ref": "term_mdix",
+            "name": "Auto-MDIX",
+            "descr": "It is a feature that detects the type of cable, and configures the interfaces to allow the connection."
+        },
+        {
+            "ref": "term_broadcast",
+            "name": "Broadcast",
+            "descr": "Message that is sent from a single sender to all recipients."
+        },
+        {
+            "ref": "term_ct_switching",
+            "name": "Cut-Through switching",
+            "descr": "It is a switching method that begins the forwarding process as soon as enough information has been received to make a forwarding decision."
+        },
+        {
+            "ref": "term_ff_switching",
+            "name": "Fragment-Free switching",
+            "descr": "It is a cut-through switching method that begins to forward data after receipt of the first 64 bytes of a frame."
+        },
+        {
             "ref": "term_isp",
             "name": "Internet service provider (ISP)",
             "descr": "An Internet service provider (ISP) is an organization that provides services for accessing, using, or participating in the Internet. Internet service providers may be organized in various forms, such as commercial, community-owned, non-profit, or otherwise privately owned."
@@ -11,14 +36,44 @@
             "descr": "A local area network (LAN) is a computer network that interconnects computers within a limited area such as a residence, school, laboratory, university campus or office building.[1] By contrast, a wide area network (WAN) not only covers a larger geographic distance, but also generally involves leased telecommunication circuits."
         },
         {
+            "ref": "term_logical_address",
+            "name": "Logical Address",
+            "descr": "A Layer 3 address that identifies both the network and the specific host on that network."
+        },
+        {
             "ref": "term_man",
             "name": "Metropolitan Area Network (MAN)",
             "descr": "A metropolitan area network (MAN) is a computer network that interconnects users with computer resources in a geographic area or region larger than that covered by even a large local area network (LAN) but smaller than the area covered by a wide area network (WAN). The term MAN is applied to the interconnection of networks in a city into a single larger network which may then also offer efficient connection to a wide area network. The term is also used to describe the interconnection of several local area networks in a metropolitan area through the use of point-to-point connections between them. It has a range of 5 to 50 kilometers. "
         },
         {
+            "ref": "term_multicast",
+            "name": "Multicast",
+            "descr": "Message that is sent from a single sender to a group of recipients (more than one), but not all. The multicast MAC address is a special value that begins with 01-00-5E in hexadecimal. It allows a source device to send a packet to a group of devices."
+        },
+        {
+            "ref": "term_physical_address",
+            "name": "Physical Address",
+            "descr": "A Layer 2 address that allows NICs to communicate with each other."
+        },
+        {
+            "ref": "term_saf_switching",
+            "name": "Store-And-Forward switching",
+            "descr": "It is a switching method that receives the entire frame before forwarding."
+        },
+        {
+            "ref": "term_throughtput",
+            "name": "Throughtput",
+            "descr": "In general terms, throughput is the maximum rate of production or the maximum rate at which something can be processed. When used in the context of communication networks, such as Ethernet or packet radio, throughput or network throughput is the rate of successful message delivery over a communication channel."
+        },
+        {
+            "ref": "term_unicast",
+            "name": "Unicast",
+            "descr": "Message that is sent from a single sender to a single recipient."
+        },
+        {
             "ref": "term_vlan",
             "name": "Virtual LAN (VLAN)",
-            "descr": "A virtual LAN (VLAN) is any broadcast domain that is partitioned and isolated in a computer network at the data link layer (OSI layer 2). LAN is the abbreviation for local area network and in this context virtual refers to a physical object recreated and altered by additional logic. VLANs work by applying tags to network packets and handling these tags in networking systems \u2013 creating the appearance and functionality of network traffic that is physically on a single network but acts as if it is split between separate networks. In this way, VLANs can keep network applications separate despite being connected to the same physical network, and without requiring multiple sets of cabling and networking devices to be deployed."
+            "descr": "A virtual LAN (VLAN) is any broadcast domain that is partitioned and isolated in a computer network at the data link layer (OSI layer 2). LAN is the abbreviation for local area network and in this context virtual refers to a physical object recreated and altered by additional logic. VLANs work by applying tags to network packets and handling these tags in networking systems, creating the appearance and functionality of network traffic that is physically on a single network but acts as if it is split between separate networks. In this way, VLANs can keep network applications separate despite being connected to the same physical network, and without requiring multiple sets of cabling and networking devices to be deployed."
         },
         {
             "ref": "term_wisp",
